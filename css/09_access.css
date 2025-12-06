@@ -1,0 +1,85 @@
+/* ===== アクセス ===== */
+.access {
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.access-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+.access-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.clinic-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.access-block {
+  margin-bottom: 24px;
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.address,
+.tel {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.access-map img {
+  width: 100%;
+  height: auto;
+  margin-top: 32px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .access {
+    padding: 100px 0;
+  }
+
+  .access-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .access-title {
+    font-size: 28px;
+    margin-bottom: 48px;
+  }
+
+  .access-photo img {
+    width: 80%;
+    margin: 0 auto 40px;
+    display: block;
+  }
+
+  .clinic-name {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .address,
+  .tel {
+    font-size: 15px;
+  }
+
+  .access-map img {
+    width: 80%;
+    margin: 48px auto 0;
+    display: block;
+  }
+}

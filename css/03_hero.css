@@ -1,0 +1,68 @@
+/* ===== ヒーローセクション（SP） ===== */
+.hero {
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 0px; /* バナーとの距離用 */
+}
+
+.hero-image img {
+  width: 95%;
+  margin-left: auto;
+  display: block;
+  height: auto;
+}
+
+.hero-text {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  color: #3E6C73;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1.2;
+}
+
+/* SP文字 */
+.hero-text .t1 { font-size: 40px; }
+.hero-text .t2 { font-size: 50px; margin-top: 40px; color: #27D9E8;}
+.hero-text .t3 { font-size: 40px; margin-top: 120px; }
+
+/* ===== PCレイアウト ===== */
+@media (min-width: 768px) {
+
+  .hero {
+    padding-bottom: 40px; /* バナーとの距離用 */
+  }
+
+  /* 2カラム構造に切り替え */
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+  }
+
+  /* テキストは通常フローへ（absolute禁止） */
+  .hero-text {
+    position: static;
+    writing-mode: horizontal-tb;
+    text-align: left;
+    width: 750px;        /* キャッチコピー領域幅（調整可能） */
+    margin-left: 80px;  /* ← ★右にずらす量（調整可能） */
+  }
+
+  .hero-text .t1 { font-size: 65px; font-weight: 300;}
+  .hero-text .t2 { font-size: 80px; font-weight: 500; }
+  .hero-text .t3 { font-size: 65px; font-weight: 300; white-space: nowrap; }
+
+  /* 画像はFigma通り固定幅618px */
+  .hero-image img {
+    width: 618px;
+    height: auto;
+    flex-shrink: 0;
+  }
+}

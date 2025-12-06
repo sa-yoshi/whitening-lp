@@ -1,0 +1,154 @@
+/* ===== 料金セクション ===== */
+.price {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.price-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* SP：縦並び */
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* カード */
+.price-card {
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ビギナー／ノーマル／エキスパート */
+.price-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  padding: 12px 0;
+}
+
+/* 上線 */
+.price-name::before,
+.price-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.price-name::before {
+  top: 0;
+  height: 3px;
+  background: #2FD3E6;
+}
+
+/* 下線 */
+.price-name::after {
+  bottom: 0;
+  height: 1px;
+  background: #2FD3E6;
+}
+
+/* ラベル・値 */
+.price-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 20px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.label {
+  color: #444;
+  font-size: 15px;
+}
+
+.value {
+  font-size: 15px;
+  color: #333;
+}
+
+.value.bold {
+  font-weight: bold;
+}
+
+
+/* ===== PCレイアウト ===== */
+@media (min-width: 768px) {
+
+  .price {
+    padding: 80px 20px;
+  }
+
+  .price-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .price-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* 外側の縦線（左） */
+  .price-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #e5e5e5;
+  }
+
+  /* 外側の縦線（右） */
+  .price-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #e5e5e5;
+  }
+
+  .price-card {
+    flex: 1 1 0;
+    min-width: 0; /* ← カラムを絶対に押し広げない */
+    padding: 0 60px;
+  }
+
+  .value {
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  /* 中央の2本の縦線は「カード + カード」で確実に中央につく */
+  .price-card + .price-card {
+    border-left: 1px solid #e5e5e5;
+  }
+
+  /* PC用タイトルの横線調整 */
+  .price-name {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .price-name::before,
+  .price-name::after {
+    height: 1px;
+    background: #999;
+  }
+}

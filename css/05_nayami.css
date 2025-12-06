@@ -1,0 +1,140 @@
+/* ===== 悩みセクション ===== */
+.trouble {
+  background: #fff;
+  text-align: center;
+  padding: 60px 20px; /* 上下余白 */
+}
+
+.trouble-title {
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.trouble-title .line1 {
+  font-size: 40px;
+  color: #27D9E8; /* 水色 */
+}
+
+.trouble-title .line2 {
+  font-size: 30px;
+  color: #272E2F; /* 黒 */
+}
+
+.trouble-divider {
+  width: 40px;
+  height: 2px;
+  background-color: #00bcd4;
+  margin: 0 auto 80px; /* ← 下に大きめの余白(60px) */
+}
+
+.trouble-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trouble-list li {
+  display: flex;
+  flex-direction: column; /* SPでは画像→テキスト */
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.trouble-text {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #272E2F;
+  position: relative; /* これが必要！ */
+  left: 10px;
+}
+
+.trouble-img {
+  width: 170px;
+  height: 127px;
+  object-fit: contain; /* 画像の比率を保ったまま表示 */
+  display: block;      /* 中央寄せのため */
+  margin: 0 auto;      /* 中央寄せ */
+}
+
+.trouble-text2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #272E2F;
+  position: relative; /* これが必要！ */
+  left: 7px;
+}
+
+.trouble-img2 {
+  width: 170px;
+  height: 127px;
+  object-fit: contain; /* 画像の比率を保ったまま表示 */
+  position: relative; /* これが必要！ */
+  left: -15px;
+}
+
+.trouble-text3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #272E2F;
+  position: relative; /* これが必要！ */
+  left: 7px;
+}
+
+.trouble-img3 {
+  width: 170px;
+  height: 127px;
+  object-fit: contain; /* 画像の比率を保ったまま表示 */
+  position: relative; /* これが必要！ */
+  left: 10px;
+}
+
+/* ===== PC版 ===== */
+@media screen and (min-width: 768px) {
+  /* ===== 悩みセクション ===== */
+  .trouble {
+    padding-top: 100px; /* ←ここをしっかり多めに */
+  }
+  
+  .trouble-title .line1{
+    font-size: 32px;
+  }
+
+  .trouble-title .line2{
+    font-size: 32px;
+  }
+
+  .trouble-title br {
+    display: none; /* 改行を消す */
+  }
+ 
+  .trouble-divider {
+    width: 94px;
+  }
+
+  .trouble-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* カード間の隙間 */
+  }
+
+  .trouble-list li {
+    margin-bottom: 0; /* SPの余白を消す */
+    width: 220px; /* 均等サイズに調整 */
+    flex-direction: column-reverse; /* ←順序を逆に！ */
+  }
+
+  .trouble-text {
+    font-size: 18px;
+    min-height: 48px; /* テキスト量が違っても揃うように */
+  }
+  .trouble-text2 {
+    font-size: 18px;
+    min-height: 48px; /* テキスト量が違っても揃うように */
+  }
+  .trouble-text3 {
+    font-size: 18px;
+    min-height: 48px; /* テキスト量が違っても揃うように */
+  }
+}

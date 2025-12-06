@@ -1,0 +1,196 @@
+/* ===========================
+   Contact : SP（必ず最初に当たる）
+=========================== */
+
+.contact {
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.contact-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; 
+  
+  
+  /* ← 左右余白を他セクションと揃える */
+}
+
+/* タイトル */
+.contact-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.contact-title .blue {
+  color: #27D9E8;
+}
+
+/* 説明文：左寄せ & 行間狭め */
+.contact-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #333;
+  margin: 0 auto;
+  /* ←Figma の幅に合わせる（超重要） */
+  max-width: 280px;
+}
+
+/* 小見出し */
+.contact-subtitle {
+  font-size: 20px;
+  font-weight: 450;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* フォーム全体を縦並びに強制（超重要） */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;       /* ← テキストと同じ幅に収める */
+  margin: 0 auto;
+}
+
+/* ラベルと入力欄を必ず縦に並べる（PCのstyleをリセット） */
+.contact-form label {
+  display: flex;
+  flex-direction: column !important;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+}
+
+/* 入力欄 */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+
+  /* SP で勝手に伸びないように */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* テキストエリア */
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* ボタン */
+.contact-btn {
+  margin-top: 20px;
+  width: 80%;
+  background: #ff80b5;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  padding: 14px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.contact-btn img {
+  width: 18px;
+}
+
+
+/* ===========================
+   PC（横幅768px以上）
+=========================== */
+@media (min-width: 768px) {
+
+  .contact {
+    padding: 80px 0;
+  }
+
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .contact-desc {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .contact-subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1200px; /* ←Figmaで中央ガイドに合わせる幅に調整可 */
+  }
+
+  /* ▼▼ ここからが重要 ▼▼ */
+  /* 1行を横並びにする */
+  .contact-form label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 20px;
+    width: 100%;           /* ← 行全体の幅は100% */
+    margin-bottom: 20px;   /* ← 中央寄せはしない */
+  }
+
+  /* 左側のラベルテキストを固定幅で揃える */
+  .contact-form label span {
+    display: inline-block;
+    width: 140px;      /* ← Figma に合わせて調整可能 */
+    text-align: left; /* ラベル文字を右寄せで整列 */
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  /* 入力欄を残り全部の幅に広げる */
+  .contact-form input,
+  .contact-form textarea {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+
+  /* textarea は高さだけ大きめに */
+  .contact-form textarea {
+    height: 180px;
+  }
+
+  /* ボタン中央揃え */
+  .contact-btn {
+    max-width: 280px;
+    margin: 40px auto 0;
+    font-size: 18px;
+    padding: 16px 0;
+    border-radius: 10px;
+  }
+}

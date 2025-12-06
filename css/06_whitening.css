@@ -1,0 +1,213 @@
+/* ===== ホワイトニング全体 ===== */
+.whitening {
+  text-align: center;
+  padding: 60px 20px 0;
+  background: none; /* 背景は個別に指定 */
+}
+
+.whitening .container {
+  max-width: 100%;
+  margin: 0
+}
+
+/* タイトル */
+.whitening-title {
+  font-size: 37px;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.highlight {
+  color: #27D9E8;
+  font-weight: bold;
+  font-size: 40px;
+}
+.highlight2 {
+  font-size: 37px;
+  font-weight: lighter;
+}
+
+/* ===== 青背景エリア（SP＝左右いっぱい） ===== */
+.whitening-bg {
+  position: relative;
+  background: #ecfbff;
+  margin: 0 -20px;
+  padding: 60px 20px 40px;
+  z-index: 1; /* 本体の高さ基準になる */
+}
+
+/* ▼ 上の三角切り口（最前面に重ねる） */
+.whitening-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;            /* ← Y座標を完全一致させる */
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  clip-path: polygon(40% 0, 60% 0, 50% 50%);
+  z-index: 2;        /* ← 三角を最前面にする */
+  transform: none;   /* ← translateY を消すのがポイント！ */
+}
+
+/* 見出し（青帯内） */
+.whitening-sub {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.whitening-sub .pink { color: #ff80b5; }
+.whitening-sub .black { font-weight: bold; }
+.whitening-sub .black.bold { font-weight: 700; }
+
+/* 説明文 */
+.whitening-section {
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: left;
+}
+.whitening-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 28px;
+}
+.whitening-tag {
+  display: inline-block;
+  background: #d5f2f9;
+  color: #0096a6;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== 比較画像 ===== */
+.whitening-compare {
+  background: #ecfbff;   /* ← 青背景 */
+  padding: 60px 20px;    /* 余白 */
+  margin: 0 -20px;       /* SPで左右いっぱいに広げる */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+/*  margin-top: 40px;*/
+}
+
+.compare-label { font-size: 12px; margin-bottom: 4px; }
+.arrow { display: none; }
+
+/* ===== アフターケア ===== */
+.aftercare {
+  padding: 60px 20px;
+  background: #f6fdff; /* 薄い水色背景（仮） */
+  background: #ecfbff;   /* ← 青背景 */
+}
+
+.aftercare .container {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.aftercare-block {
+  margin-bottom: 60px;
+}
+
+.aftercare-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.aftercare-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+
+
+/* ===== PC版 ===== */
+@media (min-width: 768px) {
+
+  .whitening {
+    padding: 120px 0 0;
+  }
+
+  .whitening-title {
+    font-size: 32px;
+    margin-bottom: 80px;
+  }
+  .whitening-title br {
+    display: none;
+  }
+
+  /* PC版 青背景 */
+  .whitening-bg {
+    margin: 0;              /* SPの-20pxをリセット */
+    padding: 100px 0 60px;  /* Figmaに近い上下余白へ */
+  }
+
+  .whitening-bg::before {
+    height: 40px;  /* ← SPより浅く */
+    clip-path: polygon(40% 0, 60% 0, 50% 100%);
+  }
+
+  .whitening-sub {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .whitening-section {
+    max-width: 420px;
+  }
+  .whitening-text {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* 比較画像 横並び */
+  .whitening-compare {
+    margin: 0;
+    padding: 80px 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+  .arrow { display: block; font-size: 30px; }
+
+  .aftercare-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  /* 左テキスト / 右画像 */
+/*
+  .aftercare-block .aftercare-text,
+  .aftercare-block .aftercare-img {
+    flex: 1;
+  }
+*/
+  .aftercare-block {
+    display: flex;
+    flex-direction: column;   /* ← 縦並びに変更 */
+  }
+  /* reverse クラス → 左画像 / 右テキスト */
+/*
+  .aftercare-block.reverse {
+    flex-direction: row-reverse;
+  }
+*/
+  .aftercare-block reverse {
+    display: flex;
+    flex-direction: column;   /* ← 縦並びに変更 */
+  }
+
+  .aftercare-text p {
+    font-size: 17px;
+    line-height: 2;
+  }
+
+}
