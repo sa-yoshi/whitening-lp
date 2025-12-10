@@ -10,10 +10,6 @@
 .contact-inner {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px; 
-  
-  
-  /* ← 左右余白を他セクションと揃える */
 }
 
 /* タイトル */
@@ -27,16 +23,14 @@
   color: #27D9E8;
 }
 
-/* 説明文：左寄せ & 行間狭め */
+/* 説明文 */
 .contact-desc {
   font-size: 14px;
   line-height: 1.6;
   text-align: left;
-  margin-bottom: 30px;
-  color: #333;
-  margin: 0 auto;
-  /* ←Figma の幅に合わせる（超重要） */
+  margin: 0 auto 30px;
   max-width: 280px;
+  color: #333;
 }
 
 /* 小見出し */
@@ -47,20 +41,20 @@
   text-align: center;
 }
 
-/* フォーム全体を縦並びに強制（超重要） */
+/* フォーム */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-width: 320px;       /* ← テキストと同じ幅に収める */
+  max-width: 320px;
   margin: 0 auto;
 }
 
-/* ラベルと入力欄を必ず縦に並べる（PCのstyleをリセット） */
+/* ラベルは縦並び（初期） */
 .contact-form label {
   display: flex;
-  flex-direction: column !important;
+  flex-direction: column;
   gap: 6px;
   font-size: 14px;
   color: #333;
@@ -75,8 +69,6 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
-
-  /* SP で勝手に伸びないように */
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -87,9 +79,22 @@
   resize: vertical;
 }
 
+/* エラーメッセージ */
+.error-message {
+  font-size: 13px;
+  color: #ff6b6b;
+  margin-top: 4px;
+
+  /* SPで折り返してもレイアウト崩れしない */
+  line-height: 1.4;
+}
+
+.input-error {
+  border: 2px solid #ff6b6b !important;
+}
+
 /* ボタン */
 .contact-btn {
-  margin-top: 20px;
   width: 80%;
   background: #ff80b5;
   color: #fff;
@@ -102,8 +107,9 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
+
 .contact-btn img {
   width: 18px;
 }
@@ -126,7 +132,6 @@
 
   .contact-title {
     font-size: 26px;
-    text-align: center;
   }
 
   .contact-desc {
@@ -134,58 +139,63 @@
     margin: 0 auto 40px;
     text-align: center;
     line-height: 1.8;
-    margin-bottom: 40px;
   }
 
   .contact-subtitle {
-    text-align: center;
     font-size: 16px;
     margin-bottom: 40px;
   }
-  
+
+  /* PCフォームの外枠は中央に寄せる */
   .contact-form {
-    text-align: left;
+    max-width: 900px;
     margin: 0 auto;
-    max-width: 1200px; /* ←Figmaで中央ガイドに合わせる幅に調整可 */
+    text-align: left;
   }
 
-  /* ▼▼ ここからが重要 ▼▼ */
-  /* 1行を横並びにする */
+  /* ラベル行横並び */
   .contact-form label {
-    display: flex !important;
-    flex-direction: row !important;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
-    width: 100%;           /* ← 行全体の幅は100% */
-    margin-bottom: 20px;   /* ← 中央寄せはしない */
+    width: 100%;
+    margin-bottom: 16px;
   }
 
-  /* 左側のラベルテキストを固定幅で揃える */
+  /* ラベル文字幅は統一 */
   .contact-form label span {
-    display: inline-block;
-    width: 140px;      /* ← Figma に合わせて調整可能 */
-    text-align: left; /* ラベル文字を右寄せで整列 */
+    width: 140px;
     font-size: 16px;
     white-space: nowrap;
+    text-align: left;
   }
 
-  /* 入力欄を残り全部の幅に広げる */
+  /* 入力欄は残り幅いっぱい */
   .contact-form input,
   .contact-form textarea {
-    flex: 1 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
+    flex: 1;
     font-size: 16px;
     padding: 12px 10px;
   }
 
-  /* textarea は高さだけ大きめに */
+  /* textarea は高さのみ調整 */
   .contact-form textarea {
     height: 180px;
   }
 
-  /* ボタン中央揃え */
+  /* エラーメッセージを必ず入力欄の下に表示させる */
+  .contact-form label {
+    flex-wrap: wrap;
+  }
+
+  .contact-form label .error-message {
+    width: 100%;
+    margin-left: 140px; /* ラベル幅と揃える */
+    font-size: 13px;
+  }
+
+  /* ボタン */
   .contact-btn {
     max-width: 280px;
     margin: 40px auto 0;

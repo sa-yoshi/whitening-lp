@@ -2,20 +2,23 @@
 <html lang="ja">
 
 <head>
-  <!-- 文字コード(Webページの文字コードを指定することで、文字化けを防ぎます) -->
+  <!-- 文字コード -->
   <meta charset="UTF-8">
-  <!-- レスポンシブデザイン対応(スマートフォンやタブレットでの表示を最適化します)-->
+  <!-- レスポンシブ対応 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- タイトル -->
   <title>ホワイトニング｜五反田デンタルクリニック【歯科医院だからできる白さ】</title>
+
   <!-- 検索用説明文 -->
-  <meta name="description" content="五反田デンタルクリニックは、歯科医院だからできる専門的なホワイトニングを提供。痛みに配慮した施術で自然な白さへ導きます。初めての方も安心。オンライン予約受付中です。">
-  <!-- 検索用キーワード -->
+  <meta name="description" content="五反田デンタルクリニックは、歯科医院だからできる専門的なホワイトニングを提供。痛みに配慮した施術で自然な白さへ導きます。初めての方も安心。オンライン予約受付中。">
+
+  <!-- キーワード -->
   <meta name="keywords" content="ホワイトニング, 歯科医院, 五反田, 歯を白く, デンタルクリニック">
 
-  <!-- googleフォント読み込み -->
+  <!-- Googleフォント -->
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
   </style>
 
   <!-- CSS -->
@@ -31,426 +34,396 @@
   <link rel="stylesheet" href="css/09_access.css">
   <link rel="stylesheet" href="css/10_footer.css">
 
-  <!-- ブラウザ用 -->
+  <!-- ファビコン -->
   <link rel="icon" href="images/favicon_512_2.png" type="image/png">
-  <!-- スマホ（ホーム画面）用 -->
   <link rel="apple-touch-icon" href="images/favicon_512_2.png">
 
-  <!-- ▼ OGP設定 -->
+  <!-- OGP設定 -->
   <meta property="og:title" content="ホワイトニング｜五反田デンタルクリニック">
   <meta property="og:description" content="歯科医院でしかできないホワイトニング。痛みに配慮し、自然な白さへ導きます。オンライン予約受付中。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sa-yoshi.github.io/whitening-lp/">
-  <meta property="og:image" content="https://sa-yoshi.github.io/whitening-lp/images/ogp.jpg>
+  <meta property="og:image" content="https://sa-yoshi.github.io/whitening-lp/images/ogp.jpg">
   <meta property="og:site_name" content="五反田デンタルクリニック">
-  <!-- X(Twitter) -->
   <meta name="twitter:card" content="summary_large_image">
 
 </head>
 
 <body>
 
-<!-- ====== ヘッダー ====== -->
-<header class="header">
-  <div class="container header-inner">
-    <img src="images/logo.svg" alt="ロゴ" class="logo">
-  </div>
-</header>
-
-<!-- ====== ヒーローセクション ====== -->
-<section class="hero">
-  <div class="hero-inner">
-    <!-- キャッチコピー（SPは縦書き、PCは横書き） -->
-    <div class="hero-text">
-      <h1>
-        <span class="t1">年齢に負けない、</span><br>
-        <span class="t2">ホワイトニングで</span><br>
-        <span class="t3">若々しい 白い歯へ</span>
-      </h1>
+  <!-- ===== ヘッダー ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <img src="images/logo.svg" alt="五反田デンタルクリニックのロゴ" class="logo">
     </div>
+  </header>
 
-    <!-- 女性画像 -->
-    <div class="hero-image">
-      <picture>
-        <!-- SP用 -->
-        <source srcset="images/hero_woman_sp_750.jpg" media="(max-width: 767px)">
-        <!-- PC用（1x/2x） -->
-        <img 
-          src="images/hero-woman_pc_1200.jpg"
-          srcset="images/hero-woman_pc_2400.jpg 2x"
-          alt="年齢に負けないホワイトニングで輝く白い歯へ">
-      </picture>
+  <!-- ===== ヒーローセクション ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- キャッチコピー -->
+      <div class="hero-text">
+        <h1>
+          <span class="t1">年齢に負けない、</span><br>
+          <span class="t2">ホワイトニングで</span><br>
+          <span class="t3">若々しい 白い歯へ</span>
+        </h1>
+      </div>
+
+      <!-- 女性画像 -->
+      <div class="hero-image">
+        <picture>
+          <source srcset="images/hero_woman_sp_750.jpg" media="(max-width: 767px)">
+          <img src="images/hero-woman_pc_1200.jpg"
+               srcset="images/hero-woman_pc_2400.jpg 2x"
+               alt="ホワイトニングで輝く女性の笑顔">
+        </picture>
+      </div>
+
     </div>
+  </section>
 
-  </div>
+  <!-- ===== 青帯バナー ===== -->
+  <section class="hero-banner">
+    <div class="banner-inner">
 
-</section>
+      <div class="banner-text">
+        <p class="banner-label">
+          <span class="pink">歯科医院でしかできない</span><br>
+          <span class="white banner-underline">ホワイトニング</span>
+        </p>
 
-<!-- ====== 青帯バナー ====== -->
-<section class="hero-banner">
-  <div class="banner-inner">
-
-    <!-- 左側（料金テキスト） -->
-    <div class="banner-text">
-      <p class="banner-label">
-        <span class="pink">歯科医院でしかできない</span><br>
-        <span class="white banner-underline">ホワイトニング</span>
-      </p>
-
-      <!-- 料金吹き出し -->
-      <div class="banner-price">
-        <div class="price-bubble">
-          <div class="bubble">料金</div>
+        <!-- 料金吹き出し -->
+        <div class="banner-price">
+          <div class="price-bubble">
+            <div class="bubble">料金</div>
             <p class="price-text">
-            <span class="price-value">15,000</span>
-            <span class="price-unit">円</span>
-            <span class="from">から</span>
-          </p>
+              <span class="price-value">15,000</span>
+              <span class="price-unit">円</span>
+              <span class="from">から</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- 右側（予約ボタン） -->
-    <div class="price-right">
-      <a href="#contact" class="banner-btn">
-        <span class="icon">✉</span> オンライン予約をする
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ===== 特徴セクション ===== -->
-<section class="trouble">
-  <div class="container">
-    <h2 class="trouble-title">
-      <span class="line1">こんな悩み</span><br>
-      <span class="line2">ありませんか？</span>
-    </h2>
-
-    <div class="trouble-divider"></div>
-
-    <ul class="trouble-list">
-      <li>
-        <p class="trouble-text">歯の黄ばみが気になる。</p>
-        <img src="images/icon_1.svg" alt="歯の黄ばみ" class="trouble-img">
-      </li>
-
-      <li>
-        <p class="trouble-text2">笑顔に自信が持てない</p>
-        <img src="images/icon_2.svg" alt="自信が無い歯" class="trouble-img2">
-      </li>
-
-      <li>
-        <p class="trouble-text3">元の白い歯には戻らない</p>
-        <img src="images/icon_3.svg" alt="白い歯" class="trouble-img3">
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== ホワイトニング説明 ===== -->
-<section class="whitening">
-  <div class="container">
-
-    <h2 class="whitening-title">
-      <span class="highlight">ホワイトニング</span><br>
-      <span class="highlight2">してみませんか？</span>
-    </h2>
-
-    <!-- ▼ 青背景エリア（タイトルの次から開始） -->
-    <div class="whitening-bg">
-
-      <div class="whitening-sub">
-        <span class="pink">歯科医院</span>
-        <span class="black">だからできる</span><br>
-        <span class="black bold">ホワイトニング</span>
-      </div>
-
-      <div class="whitening-section">
-        <p class="whitening-text">
-          歯科医院で行うホワイトニングは、専門の歯科医師が管理するため、高濃度のホワイトニング剤を使用することが可能です。これにより、短期間で効果的に歯を白くすることができます。また、歯や歯茎へのダメージを最小限に抑えるための対策が施されているため、安全に施術を受けることができます。
-        </p>
-        <p class="whitening-tag">約1ヶ月</p>
+      <!-- 予約ボタン -->
+      <div class="price-right">
+        <a href="#contact" class="banner-btn">
+          <span class="icon">✉</span> オンライン予約をする
+        </a>
       </div>
 
     </div>
-    <!-- ▲ 青背景エリア END -->
+  </section>
 
-    <!-- ▼ 比較画像エリア -->
-    <div class="whitening-compare">
-      <div class="compare-item">
-        <p class="compare-label">施術前</p>
+  <!-- ===== 特徴セクション ===== -->
+  <section class="trouble">
+    <div class="container">
+      <h2 class="trouble-title">
+        <span class="line1">こんな悩み</span><br>
+        <span class="line2">ありませんか？</span>
+      </h2>
+
+      <div class="trouble-divider"></div>
+
+      <ul class="trouble-list">
+        <li>
+          <p class="trouble-text">歯の黄ばみが気になる。</p>
+          <img src="images/icon_1.svg" alt="歯の黄ばみに関する悩み" class="trouble-img">
+        </li>
+
+        <li>
+          <p class="trouble-text2">笑顔に自信が持てない</p>
+          <img src="images/icon_2.svg" alt="口元の自信が持てない悩み" class="trouble-img2">
+        </li>
+
+        <li>
+          <p class="trouble-text3">元の白い歯には戻らない</p>
+          <img src="images/icon_3.svg" alt="白い歯に戻らない悩み" class="trouble-img3">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== ホワイトニング説明 ===== -->
+  <section class="whitening">
+    <div class="container">
+
+      <h2 class="whitening-title">
+        <span class="highlight">ホワイトニング</span><br>
+        <span class="highlight2">してみませんか？</span>
+      </h2>
+
+      <div class="whitening-bg">
+
+        <div class="whitening-sub">
+          <span class="pink">歯科医院</span>
+          <span class="black">だからできる</span><br>
+          <span class="black bold">ホワイトニング</span>
+        </div>
+
+        <div class="whitening-section">
+          <p class="whitening-text">
+            歯科医院で行うホワイトニングは、専門の歯科医師が管理するため、高濃度のホワイトニング剤を使用できます。短期間で効果的に歯を白くすることができ、歯や歯茎へのダメージも最小限に抑えられています。
+          </p>
+          <p class="whitening-tag">約1ヶ月</p>
+        </div>
+
+      </div>
+
+      <!-- 比較画像 -->
+      <div class="whitening-compare">
+        <div class="compare-item">
+          <p class="compare-label">施術前</p>
+          <picture>
+            <source srcset="images/before_sp.jpg" media="(max-width: 767px)">
+            <img src="images/before_pc.jpg" srcset="images/before_pc2.jpg 2x" alt="施術前の歯の状態">
+          </picture>
+        </div>
+
+        <p class="arrow">→</p>
+
+        <div class="compare-item">
+          <p class="compare-label">施術後</p>
+          <picture>
+            <source srcset="images/after_sp.jpg" media="(max-width: 767px)">
+            <img src="images/after_pc.jpg" srcset="images/after_pc2.jpg 2x" alt="施術後の歯の状態">
+          </picture>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== アフターケア ===== -->
+  <section class="aftercare">
+    <div class="container">
+
+      <div class="aftercare-block">
+        <div class="aftercare-text">
+          <p>
+            ホワイトニング後のケアも充実しています。効果を持続させるためのメンテナンスや、自宅でできるケア方法もご案内しています。
+          </p>
+        </div>
+
+        <div class="aftercare-img">
+          <picture>
+            <source srcset="images/therapy_sp.jpg" media="(max-width: 767px)">
+            <img src="images/therapy_pc.jpg" srcset="images/therapy_pc2.jpg 2x" alt="ホワイトニング施術中の様子">
+          </picture>
+        </div>
+      </div>
+
+      <div class="aftercare-block">
+        <div class="aftercare-text">
+          <p>
+            プロフェッショナルなケアにより、長期間美しい白さを保つことができます。ぜひ専門的なケアをご検討ください。
+          </p>
+        </div>
+
+        <div class="aftercare-img">
+          <picture>
+            <source srcset="images/dentist_sp.jpg" media="(max-width: 767px)">
+            <img src="images/dentist_pc.jpg" srcset="images/dentist_pc2.jpg 2x" alt="歯科医師が施術している様子">
+          </picture>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 価格 ===== -->
+  <section class="price">
+    <h2 class="price-title">治療価格</h2>
+
+    <div class="price-wrapper">
+
+      <!-- ビギナー -->
+      <div class="price-card">
+        <h3 class="price-name">ビギナー</h3>
+
+        <div class="price-row">
+          <span class="label">価格</span>
+          <span class="value bold">15,000円</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">時間</span>
+          <span class="value bold">90分</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">食事制限</span>
+          <span class="value">24時間</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">効果の目安</span>
+          <span class="value">8・9段階</span>
+        </div>
+      </div>
+
+      <!-- ノーマル -->
+      <div class="price-card">
+        <h3 class="price-name">ノーマル</h3>
+
+        <div class="price-row">
+          <span class="label">価格</span>
+          <span class="value bold">25,000円</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">時間</span>
+          <span class="value bold">60分</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">食事制限</span>
+          <span class="value">24時間</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">効果の目安</span>
+          <span class="value">5・7段階</span>
+        </div>
+      </div>
+
+      <!-- エキスパート -->
+      <div class="price-card">
+        <h3 class="price-name">エキスパート</h3>
+
+        <div class="price-row">
+          <span class="label">価格</span>
+          <span class="value bold">45,000円</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">時間</span>
+          <span class="value bold">40分</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">食事制限</span>
+          <span class="value">なし</span>
+        </div>
+
+        <div class="price-row">
+          <span class="label">効果の目安</span>
+          <span class="value">2・5段階</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 予約フォーム ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+
+      <h2 class="contact-title">
+        <span class="blue">ご予約</span>はこちらから
+      </h2>
+
+      <p class="contact-desc">
+        歯科医院だからこそできるホワイトニングで、短期間で効果的な白い歯へ導きます。皆さまのご来院を心よりお待ちしております。
+      </p>
+
+      <p class="contact-subtitle">患者様情報を入力してください。</p>
+
+      <form action="#" class="contact-form" id="contactForm">
+
+        <label>
+          <span>お名前</span>
+          <input type="text" id="name">
+          <p class="error-message" id="error-name"></p>
+        </label>
+
+        <label>
+          <span>E-Mail</span>
+          <input type="email" id="email">
+          <p class="error-message" id="error-email"></p>
+        </label>
+
+        <label>
+          <span>TEL</span>
+          <input type="tel" id="tel">
+          <p class="error-message" id="error-tel"></p>
+        </label>
+
+        <label>
+          <span>ご予約日</span>
+          <input type="date" id="date">
+          <p class="error-message" id="error-date"></p>
+        </label>
+
+        <label>
+          <span>ご要望・ご質問など</span>
+          <textarea id="msg"></textarea>
+          <p class="error-message" id="error-msg"></p>
+        </label>
+
+        <button class="contact-btn">
+          ✉　予約をする
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== アクセス ===== -->
+  <section class="access" id="access">
+    <h2 class="access-title">アクセス</h2>
+
+    <div class="access-inner">
+
+      <div class="access-photo">
         <picture>
-          <source srcset="images/before_sp.jpg" media="(max-width: 767px)">
-          <img src="images/before_pc.jpg" srcset="images/before_pc2.jpg 2x" alt="施術前">
-        </picture>
-      </div>
-
-      <p class="arrow">→</p>
-
-      <div class="compare-item">
-        <p class="compare-label">施術後</p>
-        <picture>
-          <source srcset="images/after_sp.jpg" media="(max-width: 767px)">
-          <img src="images/after_pc.jpg" srcset="images/after_pc2.jpg 2x" alt="施術後">
-        </picture>
-      </div>
-    </div>
-    <!-- ▲ 比較画像 END -->
-
-  </div>
-</section>
-
-<section class="aftercare">
-  <div class="container">
-
-    <!-- --- 1段目 --- -->
-    <div class="aftercare-block">
-      <div class="aftercare-text">
-        <p>
-          ホワイトニング後のケアも、歯科医院だからこそ充実しています。
-          効果を持続させるためのメンテナンスや、自宅でできるケアの
-          アドバイスも提供します。定期的なフォローアップにより、
-          長期間美しい白さを保つことができます。
-        </p>
-      </div>
-
-      <div class="aftercare-img">
-        <picture>
-        <!-- スマホ用 -->
-        <source srcset="images/therapy_sp.jpg" media="(max-width: 767px)">
-        <!-- PC用（通常＋2x） -->
-        <img 
-          src="images/therapy_pc.jpg"
-          srcset="images/therapy_pc2.jpg 2x"
-          alt="施術後">
-      </picture>
-      </div>
-    </div>
-
-    <!-- --- 2段目 --- -->
-    <div class="aftercare-block">
-      <div class="aftercare-text">
-        <p>
-          プロフェッショナルなケアを受けることで、
-          あなたの笑顔がより一層輝くこと間違いありません。
-          ぜひ一度、歯科医院でのホワイトニングをご検討ください。
-        </p>
-      </div>
-
-      <div class="aftercare-img">
-        <img src="images/aftercare_02.jpg" alt="">
-        <picture>
-        <!-- スマホ用 -->
-        <source srcset="images/dentist_sp.jpg" media="(max-width: 767px)">
-        <!-- PC用（通常＋2x） -->
-        <img 
-          src="images/dentist_pc.jpg"
-          srcset="images/dentist_pc2.jpg 2x"
-          alt="施術後">
-      </picture>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="price">
-  <h2 class="price-title">治療価格</h2>
-
-  <div class="price-wrapper">
-
-    <!-- ビギナー -->
-    <div class="price-card">
-      <h3 class="price-name">ビギナー</h3>
-
-      <div class="price-row">
-        <span class="label">価格</span>
-        <span class="value bold">15,000円</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">時間</span>
-        <span class="value bold">90分</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">食事制限</span>
-        <span class="value">24時間</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">効果の目安</span>
-        <span class="value">8・9段階</span>
-      </div>
-    </div>
-
-    <!-- ノーマル -->
-    <div class="price-card">
-      <h3 class="price-name">ノーマル</h3>
-
-      <div class="price-row">
-        <span class="label">価格</span>
-        <span class="value bold">25,000円</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">時間</span>
-        <span class="value bold">60分</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">食事制限</span>
-        <span class="value">24時間</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">効果の目安</span>
-        <span class="value">5・7段階</span>
-      </div>
-    </div>
-
-    <!-- エキスパート -->
-    <div class="price-card">
-      <h3 class="price-name">エキスパート</h3>
-
-      <div class="price-row">
-        <span class="label">価格</span>
-        <span class="value bold">45,000円</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">時間</span>
-        <span class="value bold">40分</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">食事制限</span>
-        <span class="value">なし</span>
-      </div>
-
-      <div class="price-row">
-        <span class="label">効果の目安</span>
-        <span class="value">2・5段階</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="contact-inner">
-
-    <!-- タイトル -->
-    <h2 class="contact-title">
-      <span class="blue">ご予約</span>はこちらから
-    </h2>
-
-    <!-- 説明文 -->
-    <p class="contact-desc">
-      歯科医院だからこそできるホワイトニングでは、プロフェッショナルなケアと最新の技術で、
-      短期間で効果的に美しい白い歯を実現します。皆さまのご来院を心よりお待ちしております。
-    </p>
-
-    <p class="contact-subtitle">患者様情報を入力してください。</p>
-
-    <!-- フォーム -->
-    <form action="#" class="contact-form">
-      <label>
-        <span>お名前</span>
-        <input type="text">
-      </label>
-
-      <label>
-        <span>E-Mail</span>
-        <input type="email">
-      </label>
-
-      <label>
-        <span>TEL</span>
-        <input type="tel">
-      </label>
-
-      <label>
-        <span>ご予約日</span>
-        <input type="date">
-      </label>
-
-      <label>
-        <span>ご要望・ご質問など</span>
-        <textarea></textarea>
-      </label>
-
-      <button class="contact-btn">
-        ✉　予約をする
-      </button>
-
-    </form>
-  </div>
-</section>
-
-<!-- ===== アクセス ===== -->
-<section class="access" id="access">
-  <h2 class="access-title">アクセス</h2>
-
-  <div class="access-inner">
-
-    <!-- 施設画像 -->
-    <div class="access-photo">
-<!--        <img src="images/exterior_sp.jpg" alt="">-->
-        <picture>
-          <!-- スマホ用 -->
           <source srcset="images/exterior_sp.jpg" media="(max-width: 767px)">
-          <!-- PC用（通常＋2x） -->
-          <img 
-            src="images/exterior_pc.jpg"
-            srcset="images/exterior_pc2.jpg 2x"
-            alt="施術後">
-      </picture>
-    </div>
-
-    <!-- テキスト -->
-    <div class="access-info">
-      <h3 class="clinic-name">五反田歯科医院</h3>
-
-      <div class="access-block">
-        <p class="label">住所</p>
-        <p class="address">〒141-0022<br>東京都品川区東五反田2丁目9−5 サウスウイング 東京五反田店</p>
+          <img src="images/exterior_pc.jpg"
+               srcset="images/exterior_pc2.jpg 2x"
+               alt="五反田歯科医院の外観">
+        </picture>
       </div>
 
-      <div class="access-block">
-        <p class="label">電話</p>
-        <p class="tel">TEL：03-0000-0000</p>
-      </div>
-    </div>
+      <div class="access-info">
+        <h3 class="clinic-name">五反田歯科医院</h3>
 
-    <!-- Google Map -->
-    <div class="access-map">
-<!--      <img src="images/map_sp.jpg" alt="Google Map">-->
+        <div class="access-block">
+          <p class="label">住所</p>
+          <p class="address">
+            〒141-0022<br>
+            東京都品川区東五反田2丁目9−5 サウスウイング 東京五反田店
+          </p>
+        </div>
+
+        <div class="access-block">
+          <p class="label">電話</p>
+          <p class="tel">TEL：03-0000-0000</p>
+        </div>
+      </div>
+
+      <div class="access-map">
         <picture>
-          <!-- スマホ用 -->
           <source srcset="images/map_sp.jpg" media="(max-width: 767px)">
-          <!-- PC用（通常＋2x） -->
-          <img 
-            src="images/map_pc.jpg"
-            srcset="images/map_pc2.jpg 2x"
-            alt="施術後">
-      </picture>
+          <img src="images/map_pc.jpg"
+               srcset="images/map_pc2.jpg 2x"
+               alt="五反田歯科医院の地図">
+        </picture>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <p class="copyright">
+      Copyright © 2024 gotanda dental clinic. All Rights Reserved.
+    </p>
+  </footer>
 
-
-<!-- ===== フッター ===== -->
-<footer class="footer">
-  <p class="copyright">
-    Copyright © 2024 gotanda dental clinic. All Rights Reserved.
-  </p>
-</footer>
+  <!-- JS -->
+  <script src="js/validation.js"></script>
 
 </body>
 </html>
