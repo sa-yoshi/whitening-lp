@@ -27,14 +27,6 @@
 .hero-text .t1 { font-size: 40px; }
 .hero-text .t2 { font-size: 50px; margin-top: 40px; color: #27D9E8;}
 .hero-text .t3 { font-size: 40px; margin-top: 120px; }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
 
 /* ===== PCレイアウト ===== */
 @media (min-width: 768px) {
