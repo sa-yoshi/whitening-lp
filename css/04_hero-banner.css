@@ -165,12 +165,16 @@
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .banner-btn:hover {
-  opacity: 0.8;
+  transform: scale(1.005);
+  background-color: #f970a0; /* ホバー時のピンク */
+  opacity: 1.5;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
+
 
 /* ===== PCバナー ===== */
 @media (min-width: 768px) {

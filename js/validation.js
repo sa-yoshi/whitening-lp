@@ -74,7 +74,12 @@ form.addEventListener("submit", function (e) {
 
 // ▼ エラー表示関数
 function showError(input, errorArea, message) {
-  input.classList.add("input-error");
+//  input.classList.add("input-error");
+//  errorArea.textContent = message;
+  input.classList.remove("input-error"); // ← 一度消す
+  void input.offsetWidth;                // ← 再描画（超重要）
+  input.classList.add("input-error");    // ← 再度付与でアニメ再発火
+
   errorArea.textContent = message;
 }
 
@@ -88,3 +93,5 @@ function clearErrors() {
     err.textContent = "";
   });
 }
+
+

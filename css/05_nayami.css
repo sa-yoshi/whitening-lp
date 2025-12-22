@@ -56,6 +56,7 @@
   object-fit: contain; /* 画像の比率を保ったまま表示 */
   display: block;      /* 中央寄せのため */
   margin: 0 auto;      /* 中央寄せ */
+  animation: float 2.5s ease-in-out infinite;
 }
 
 .trouble-text2 {
@@ -72,6 +73,7 @@
   object-fit: contain; /* 画像の比率を保ったまま表示 */
   position: relative; /* これが必要！ */
   left: -15px;
+  animation: float 2.5s ease-in-out infinite;
 }
 
 .trouble-text3 {
@@ -88,6 +90,13 @@
   object-fit: contain; /* 画像の比率を保ったまま表示 */
   position: relative; /* これが必要！ */
   left: 10px;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 /* ===== PC版 ===== */

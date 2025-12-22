@@ -90,13 +90,30 @@
 }
 
 .input-error {
-  border: 2px solid #ff6b6b !important;
+  border: 2px solid #ff4d4d;
+/*  animation: errorPulse 0.6s ease-in-out;*/
+  animation: errorPulse 1.2s ease-in-out infinite;
 }
+
+/* ふわっと赤く主張する */
+@keyframes errorPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 77, 77, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
+  }
+}
+
 
 /* ボタン */
 .contact-btn {
   width: 80%;
-  background: #ff80b5;
+/*  background: #ff80b5;*/
+  background-color: #FF7BAC;
   color: #fff;
   font-size: 24px;
   border: none;
@@ -108,10 +125,18 @@
   gap: 8px;
   cursor: pointer;
   margin: 20px auto 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-btn img {
   width: 18px;
+}
+
+.contact-btn:hover {
+  transform: scale(1.005);
+  background-color: #f970a0; /* ホバー時のピンク */
+  opacity: 1.5;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 

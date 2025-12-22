@@ -23,6 +23,15 @@
   max-width: 360px;
   margin: 0 auto;
   text-align: left;
+
+  background: #fff;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.price-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 /* ビギナー／ノーマル／エキスパート */
