@@ -92,9 +92,18 @@ form.addEventListener("submit", function (e) {
          alert("送信完了しました");
          form.reset();
        } else {
-         alert("送信失敗しました");
-         throw new Error("GAS returned error");
+       alert(
+         "送信に失敗しました。\n" +
+         "時間をおいて再度お試しください。"
+         );
        }
     })
   }
+})
+.catch(() => {
+  // 通信エラー・セキュリティソフト等でブロックされた場合
+  alert(
+    "送信に失敗しました。\n" +
+    "お手数ですが、お電話またはメールでご連絡ください。"
+  );
 }); // ← ★これが必須！
