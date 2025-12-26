@@ -1,4 +1,6 @@
+// ==============================
 // ▼ 要素取得
+// ==============================
 const form = document.getElementById("contactForm");
 
 const nameInput  = document.getElementById("name");
@@ -14,22 +16,43 @@ const errorTel   = document.getElementById("error-tel");
 const errorDate  = document.getElementById("error-date");
 const errorMsg   = document.getElementById("error-msg");
 
+// ==============================
+// ▼ 共通関数
+// ==============================
 function clearErrors() {
-  errorName.textContent = "";
-  errorEmail.textContent = "";
-  errorTel.textContent = "";
-  errorDate.textContent = "";
-  errorMsg.textContent = "";
+  const inputs = [nameInput, emailInput, telInput, dateInput, msgInput];
+  const errors = [errorName, errorEmail, errorTel, errorDate, errorMsg];
+
+  errors.forEach(err => err.textContent = "");
+  inputs.forEach(input => {
+    input.classList.remove("input-error");
+  });
 }
 
+// ★ CSSに合わせた showError
+function showError(input, errorEl, message) {
+  errorEl.textContent = message;
+
+  // ▼ 一度削除（再点滅させるため）
+  input.classList.remove("input-error");
+
+  // ▼ 強制リフロー（これがないと再アニメーションされない）
+  void input.offsetWidth;
+
+  // ▼ 再付与
+  input.classList.add("input-error");
+}
+
+// ==============================
 // ▼ submitイベント
+// ==============================
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   clearErrors();
   let isValid = true;
 
-  // --- ① 必須チェック ---
+  // --- 必須チェック ---
   if (nameInput.value.trim() === "") {
     showError(nameInput, errorName, "お名前を入力してください");
     isValid = false;
@@ -50,60 +73,44 @@ form.addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  // --- ② メール形式チェック ---
+  // --- メール形式 ---
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (emailInput.value.trim() !== "" && !emailPattern.test(emailInput.value)) {
+  if (emailInput.value && !emailPattern.test(emailInput.value)) {
     showError(emailInput, errorEmail, "正しいメールアドレスを入力してください");
     isValid = false;
   }
 
-  // --- ③ 電話番号チェック ---
+  // --- 電話番号 ---
   const telPattern = /^[0-9]{10,11}$/;
-  if (telInput.value.trim() !== "" && !telPattern.test(telInput.value)) {
+  if (telInput.value && !telPattern.test(telInput.value)) {
     showError(telInput, errorTel, "電話番号は10〜11桁の数字で入力してください");
     isValid = false;
   }
 
-  // --- ④ メッセージ文字数 ---
+  // --- 日付（過去日） ---
+  if (dateInput.value) {
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (isNaN(selectedDate.getTime())) {
+      showError(dateInput, errorDate, "正しい日付を選択してください");
+      isValid = false;
+    } else if (selectedDate < today) {
+      showError(dateInput, errorDate, "過去の日付は選択できません");
+      isValid = false;
+    }
+  }
+
+  // --- 文字数 ---
   if (msgInput.value.length > 300) {
-    showError(msgInput, errorMsg, "ご質問内容は300文字以内で入力してください");
+    showError(msgInput, errorMsg, "300文字以内で入力してください");
     isValid = false;
   }
 
-  // --- ⑤ 全てOKなら送信 ---
+  // --- OK ---
   if (isValid) {
-    const params = new URLSearchParams({
-      name: nameInput.value,
-      email: emailInput.value,
-      tel: telInput.value,
-      date: dateInput.value,
-      message: msgInput.value
-    });
-  
-    fetch("https://script.google.com/macros/s/AKfycbxpfyNQb7OI2CjhnQXqt423BUPm3KCIP284slz6Yz3yytdN0VsaTDtGsLdzPn9wIaesYQ/exec", {
-      method: "POST",
-      body: params
-    })
-    .then(res => res.text())
-    .then(text => {
-       console.log("GAS response:", text);
-
-       if (text === "success") {
-         alert("送信完了しました");
-         form.reset();
-       } else {
-       alert(
-         "送信に失敗しました。\n" +
-         "時間をおいて再度お試しください。"
-         );
-       }
-    })
+    alert("バリデーションOK（送信処理に進みます）");
+    // fetch処理をここに
   }
-})
-.catch(() => {
-  // 通信エラー・セキュリティソフト等でブロックされた場合
-  alert(
-    "送信に失敗しました。\n" +
-    "お手数ですが、お電話またはメールでご連絡ください。"
-  );
-}); // ← ★これが必須！
+});
