@@ -110,7 +110,41 @@ form.addEventListener("submit", function (e) {
 
   // --- OK ---
   if (isValid) {
-    alert("バリデーションOK（送信処理に進みます）");
-    // fetch処理をここに
+    const params = new URLSearchParams({
+      name: nameInput.value,
+      email: emailInput.value,
+      tel: telInput.value,
+      date: dateInput.value,
+      message: msgInput.value
+    });
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbxpfyNQb7OI2CjhnQXqt423BUPm3KCIP284slz6Yz3yytdN0VsaTDtGsLdzPn9wIaesYQ/exec",
+      {
+        method: "POST",
+        body: params
+      }
+    )
+      .then(res => res.text())
+      .then(text => {
+        console.log("GAS response:", text);
+
+        if (text === "success") {
+          alert("送信完了しました");
+          form.reset();
+        } else {
+          alert(
+            "送信に失敗しました。\n" +
+            "時間をおいて再度お試しください。"
+          );
+        }
+      })
+      .catch(() => {
+        // 通信エラー・セキュリティソフト等
+        alert(
+          "送信に失敗しました。\n" +
+          "お手数ですが、お電話またはメールでご連絡ください。"
+        );
+      });
   }
 });
