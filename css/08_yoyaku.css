@@ -84,14 +84,11 @@
   font-size: 13px;
   color: #ff6b6b;
   margin-top: 4px;
-
-  /* SPで折り返してもレイアウト崩れしない */
   line-height: 1.4;
 }
 
 .input-error {
   border: 2px solid #ff4d4d;
-/*  animation: errorPulse 0.6s ease-in-out;*/
   animation: errorPulse 1.2s ease-in-out infinite;
 }
 
@@ -108,37 +105,59 @@
   }
 }
 
+/* ===========================
+   ボタン（★強化）
+=========================== */
 
-/* ボタン */
 .contact-btn {
   width: 80%;
-/*  background: #ff80b5;*/
   background-color: #FF7BAC;
   color: #fff;
   font-size: 24px;
   border: none;
   padding: 14px 0;
   border-radius: 8px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
+
   cursor: pointer;
   margin: 20px auto 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* ★ 押した感の土台 */
+  box-shadow: 0 6px 0 #d85c8c;
+
+  /* ★ 状態遷移を整理 */
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .contact-btn img {
   width: 18px;
 }
 
+/* hover：少し持ち上げる */
 .contact-btn:hover {
-  transform: scale(1.005);
-  background-color: #f970a0; /* ホバー時のピンク */
-  opacity: 1.5;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background-color: #f970a0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #d85c8c;
 }
 
+/* ★ active：押下時に沈み込む */
+.contact-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d85c8c;
+}
+
+/* ★ focus-visible：キーボード操作対応 */
+.contact-btn:focus-visible {
+  outline: 3px solid rgba(255, 151, 189, 0.6);
+  outline-offset: 4px;
+}
 
 /* ===========================
    PC（横幅768px以上）
@@ -171,52 +190,39 @@
     margin-bottom: 40px;
   }
 
-  /* PCフォームの外枠は中央に寄せる */
   .contact-form {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
   }
 
-  /* ラベル行横並び */
   .contact-form label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 6px;
     width: 100%;
     margin-bottom: 16px;
   }
 
-  /* ラベル文字幅は統一 */
   .contact-form label span {
-    width: 140px;
+    grid-column: 1;
     font-size: 16px;
     white-space: nowrap;
-    text-align: left;
   }
 
-  /* 入力欄は残り幅いっぱい */
   .contact-form input,
   .contact-form textarea {
-    flex: 1;
+    grid-column: 2;
     font-size: 16px;
     padding: 12px 10px;
   }
 
-  /* textarea は高さのみ調整 */
   .contact-form textarea {
     height: 180px;
   }
 
-  /* エラーメッセージを必ず入力欄の下に表示させる */
-  .contact-form label {
-    flex-wrap: wrap;
-  }
-
   .contact-form label .error-message {
-    width: 100%;
-    margin-left: 140px; /* ラベル幅と揃える */
+    grid-column: 2;
     font-size: 13px;
   }
 
